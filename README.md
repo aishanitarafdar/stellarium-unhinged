@@ -67,7 +67,7 @@ Each fight has lunges, dodges, hit flashes, POW!/WHIFF! bursts, health bars and 
 
 It is a new web app written from scratch. **No Stellarium code is used.** Only the idea and the look of a planetarium sky are borrowed.
 
-## How it works (for the judges)
+## How it works 
 
 - **Everything is drawn on one HTML `<canvas>`**, redrawn about 60 times a second.
 - **Each constellation is data:** a list of star positions and a list of lines connecting them.
