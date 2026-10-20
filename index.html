@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stellarium Unhinged</title>
+  <!-- Fonts (optional: the app still works offline with fallback fonts) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=JetBrains+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Everything in the sky is drawn on this one canvas -->
+  <canvas id="sky"></canvas>
+
+  <!-- Title overlay -->
+  <header class="hud">
+    <h1>Stellarium <span>Unhinged</span></h1>
+    <p id="tagline">Tap a constellation if you dare</p>
+  </header>
+
+  <!-- Buttons, bottom-right -->
+  <nav class="toolbar" aria-label="Modes">
+    <button id="btn-sound" class="btn" aria-pressed="false">Sound off</button>
+    <button id="btn-art" class="btn" aria-pressed="true">Figures on</button>
+    <button id="btn-rave" class="btn" aria-pressed="false">Rave</button>
+    <button id="btn-real" class="btn" aria-pressed="false">Real mode</button>
+    <button id="btn-share" class="btn">Share</button>
+    <button id="btn-battle" class="btn btn-primary">Battle</button>
+  </nav>
+
+  <!-- Short messages ("Shared!", "Screenshot saved") -->
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <!-- Obituaries for all four losers, filled in by showObituaries() -->
+  <section id="obit" class="obit" hidden aria-live="assertive">
+    <p class="obit-kicker">Tonight's obituaries</p>
+    <div id="obit-list"></div>
+    <div class="obit-actions">
+      <button id="obit-rematch" class="btn btn-primary">Rematch</button>
+      <button id="obit-leave" class="btn">Back to the sky</button>
+    </div>
+  </section>
+
+  <!-- Fake info card, filled in by showInfo() in app.js -->
+  <aside id="info" class="info" hidden aria-live="polite">
+    <button id="info-close" class="info-close" aria-label="Close info card">×</button>
+    <p class="info-kicker">Object info · totally accurate</p>
+    <h2 id="info-title"></h2>
+    <dl id="info-stats"></dl>
+    <p id="info-fact" class="info-fact"></p>
+    <p id="info-real" class="info-real"></p>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
